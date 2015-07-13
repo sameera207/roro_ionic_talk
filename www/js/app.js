@@ -5,10 +5,11 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ionic.service.core', 'ionic.service.analytics'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $ionicAnalytics) {
   $ionicPlatform.ready(function() {
+    $ionicAnalytics.register();
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
@@ -21,7 +22,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $ionicAppProvider) {
+
+  $ionicAppProvider.identify({
+    app_id: 'efae4ee3',
+    api_key: '4010212d4f6c1cd3f543905cc507b71196cabdadfa6a04ad',
+    // The GCM project ID (project number) from your Google Developer Console (un-comment if used)
+    // gcm_id: 'YOUR_GCM_ID'
+  });
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router

@@ -1,6 +1,6 @@
 {
   "name": "roro_demo",
-  "app_id": "",
+  "app_id": "5a8d4dd7",
   "gulpStartupTasks": [
     "sass",
     "watch"
