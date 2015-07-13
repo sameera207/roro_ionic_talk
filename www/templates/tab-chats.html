@@ -1,0 +1,16 @@
+<ion-view view-title="RORO Syd Talks">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="talk in talks" type="item-text-wrap" href="#/tab/talks/{{talk.id}}">
+        <img ng-src="{{talk.face}}">
+        <h2>{{talk.name}}</h2>
+        <p>{{talk.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(talk)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
